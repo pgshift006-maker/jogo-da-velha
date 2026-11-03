@@ -102,7 +102,8 @@ while programa_ativo == True:
                 if tabuleiro[linha][coluna] == " ":
                     casa_livre = True
                 else:
-                    print("Casa ocupada! Escolha outra jogada.")
+                    # Informa qual casa foi escolhida e quem ja marcou nela
+                    print("Casa ocupada! A linha " + str(linha + 1) + ", coluna " + str(coluna + 1) + " ja esta marcada com " + tabuleiro[linha][coluna] + ". Escolha outra jogada.")
 
             tabuleiro[linha][coluna] = simbolo
             jogadas = jogadas + 1
