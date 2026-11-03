@@ -82,6 +82,15 @@ while programa_ativo == True:
                             print("Entrada invalida! Voce nao digitou nada. Digite um numero de 1 a 3.")
                         else:
                             print("Entrada invalida! Voce digitou '" + entrada + "'. Digite um numero de 1 a 3.")
+                    else:
+                        # Confere se a linha escolhida ainda tem alguma casa vazia
+                        casas_vazias = 0
+                        for j in range(3):
+                            if tabuleiro[linha][j] == " ":
+                                casas_vazias = casas_vazias + 1
+                        if casas_vazias == 0:
+                            print("A linha " + str(linha + 1) + " esta cheia! Escolha outra linha.")
+                            linha_valida = False
 
                 # Repete a leitura ate a coluna ser valida
                 coluna_valida = False
