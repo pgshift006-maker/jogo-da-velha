@@ -35,7 +35,11 @@ while programa_ativo == True:
                 opcao_valida = True
                 opcao = n
         if opcao_valida == False:
-            print("Opcao invalida! Digite um numero de 1 a 4.")
+            # Mostra o que foi digitado para o jogador perceber o erro
+            if entrada == "":
+                print("Opcao invalida! Voce nao digitou nada. Digite um numero de 1 a 4.")
+            else:
+                print("Opcao invalida! Voce digitou '" + entrada + "'. Digite um numero de 1 a 4.")
 
     if opcao == 1:
         # ==================== SECAO 4: PARTIDA ====================
@@ -74,7 +78,10 @@ while programa_ativo == True:
                             linha_valida = True
                             linha = n - 1  # indice da matriz (0 a 2)
                     if linha_valida == False:
-                        print("Entrada invalida! Digite um numero de 1 a 3.")
+                        if entrada == "":
+                            print("Entrada invalida! Voce nao digitou nada. Digite um numero de 1 a 3.")
+                        else:
+                            print("Entrada invalida! Voce digitou '" + entrada + "'. Digite um numero de 1 a 3.")
 
                 # Repete a leitura ate a coluna ser valida
                 coluna_valida = False
@@ -86,7 +93,10 @@ while programa_ativo == True:
                             coluna_valida = True
                             coluna = n - 1  # indice da matriz (0 a 2)
                     if coluna_valida == False:
-                        print("Entrada invalida! Digite um numero de 1 a 3.")
+                        if entrada == "":
+                            print("Entrada invalida! Voce nao digitou nada. Digite um numero de 1 a 3.")
+                        else:
+                            print("Entrada invalida! Voce digitou '" + entrada + "'. Digite um numero de 1 a 3.")
 
                 # So aceita a jogada se a casa escolhida estiver vazia
                 if tabuleiro[linha][coluna] == " ":
