@@ -99,6 +99,12 @@ while programa_ativo == True:
 
             # Verificacao de vitoria e empate e troca de jogador (PG)
 
+            # Troca de jogador: depois de X joga O, depois de O joga X
+            if simbolo == "X":
+                simbolo = "O"
+            else:
+                simbolo = "X"
+
         # Exibe o tabuleiro final da partida
         print()
         print("     1   2   3")
