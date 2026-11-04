@@ -123,6 +123,18 @@ while programa_ativo == True:
                 if marcadas == 3:
                     vencedor = simbolo
 
+            # Diagonais: na principal a linha e a coluna sao iguais (0,0 1,1 2,2);
+            # na secundaria a coluna e 2 menos a linha (0,2 1,1 2,0)
+            diagonal_principal = 0
+            diagonal_secundaria = 0
+            for i in range(3):
+                if tabuleiro[i][i] == simbolo:
+                    diagonal_principal = diagonal_principal + 1
+                if tabuleiro[i][2 - i] == simbolo:
+                    diagonal_secundaria = diagonal_secundaria + 1
+            if diagonal_principal == 3 or diagonal_secundaria == 3:
+                vencedor = simbolo
+
             if vencedor != "":
                 partida_ativa = False
             # Com as 9 casas marcadas, nao ha mais jogada possivel
