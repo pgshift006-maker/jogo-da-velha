@@ -48,10 +48,10 @@ while programa_ativo == True:
         while jogadas < 9:
             # Exibicao do tabuleiro (Marlon)
             print()
-            print("     1   2   3")
+            print("         1   2   3   (colunas)")
             # O for de fora percorre as linhas da matriz
             for i in range(3):
-                texto_linha = "  " + str(i + 1) + " "
+                texto_linha = "Linha " + str(i + 1) + " "
                 # O for de dentro percorre as colunas da linha i
                 for j in range(3):
                     texto_linha = texto_linha + " " + tabuleiro[i][j] + " "
@@ -59,7 +59,7 @@ while programa_ativo == True:
                         texto_linha = texto_linha + "|"
                 print(texto_linha)
                 if i < 2:
-                    print("    ---+---+---")
+                    print("        ---+---+---")
             print()
 
             print("Vez do jogador " + simbolo)
@@ -121,17 +121,17 @@ while programa_ativo == True:
 
         # Exibe o tabuleiro final da partida
         print()
-        print("     1   2   3")
+        print("         1   2   3   (colunas)")
         # Mesmos lacos da exibicao: linhas por fora, colunas por dentro
         for i in range(3):
-            texto_linha = "  " + str(i + 1) + " "
+            texto_linha = "Linha " + str(i + 1) + " "
             for j in range(3):
                 texto_linha = texto_linha + " " + tabuleiro[i][j] + " "
                 if j < 2:
                     texto_linha = texto_linha + "|"
             print(texto_linha)
             if i < 2:
-                print("    ---+---+---")
+                print("        ---+---+---")
         print()
         print("Fim da partida.")
 
