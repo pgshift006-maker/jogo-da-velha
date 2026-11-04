@@ -39,9 +39,14 @@ while programa_ativo == True:
 
     if opcao == 1:
         # ==================== SECAO 4: PARTIDA ====================
-        # TEMPORARIO: o PG troca esta condicao pela verificacao de
-        # vitoria e empate, e o Francisco zera "jogadas" ao limpar o tabuleiro
-        while jogadas < 9:
+        # Controle da partida (PG)
+        # O Francisco zera "jogadas" e limpa a matriz entre uma partida e outra
+        partida_ativa = True   # vira False quando alguem vence ou quando empata
+        vencedor = ""          # guarda "X" ou "O"; continua "" se empatar
+        simbolo = "X"          # toda partida comeca com o jogador X
+
+        # Este while repete as jogadas ate a partida terminar
+        while partida_ativa == True:
             # Exibicao do tabuleiro (Marlon)
             print()
             print("     1   2   3")
@@ -98,6 +103,49 @@ while programa_ativo == True:
             jogadas = jogadas + 1
 
             # Verificacao de vitoria e empate e troca de jogador (PG)
+            # So o simbolo que acabou de jogar pode ter completado uma sequencia
+
+            # Linhas: o for de fora escolhe a linha i, o de dentro conta as casas
+            for i in range(3):
+                marcadas = 0
+                for j in range(3):
+                    if tabuleiro[i][j] == simbolo:
+                        marcadas = marcadas + 1
+                if marcadas == 3:
+                    vencedor = simbolo
+
+            # Colunas: o for de fora escolhe a coluna j, o de dentro desce as linhas
+            for j in range(3):
+                marcadas = 0
+                for i in range(3):
+                    if tabuleiro[i][j] == simbolo:
+                        marcadas = marcadas + 1
+                if marcadas == 3:
+                    vencedor = simbolo
+
+            # Diagonais: na principal a linha e a coluna sao iguais (0,0 1,1 2,2);
+            # na secundaria a coluna e 2 menos a linha (0,2 1,1 2,0)
+            diagonal_principal = 0
+            diagonal_secundaria = 0
+            for i in range(3):
+                if tabuleiro[i][i] == simbolo:
+                    diagonal_principal = diagonal_principal + 1
+                if tabuleiro[i][2 - i] == simbolo:
+                    diagonal_secundaria = diagonal_secundaria + 1
+            if diagonal_principal == 3 or diagonal_secundaria == 3:
+                vencedor = simbolo
+
+            if vencedor != "":
+                partida_ativa = False
+            # Com as 9 casas marcadas, nao ha mais jogada possivel
+            elif jogadas == 9:
+                partida_ativa = False
+            else:
+                # Troca de jogador: depois de X joga O, depois de O joga X
+                if simbolo == "X":
+                    simbolo = "O"
+                else:
+                    simbolo = "X"
 
         # Exibe o tabuleiro final da partida
         print()
@@ -114,6 +162,12 @@ while programa_ativo == True:
                 print("    ---+---+---")
         print()
         print("Fim da partida.")
+
+        # Resultado da partida (PG)
+        if vencedor != "":
+            print("O jogador " + vencedor + " venceu!")
+        else:
+            print("Deu velha! A partida terminou empatada.")
 
         # Resultado, placar, serie e jogar novamente (Francisco)
 
