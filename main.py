@@ -18,19 +18,26 @@ programa_ativo = True  # controla o menu principal
 vitorias_x = 0   # partidas vencidas pelo jogador X
 vitorias_o = 0   # partidas vencidas pelo jogador O
 empates = 0      # partidas que terminaram sem vencedor
+jogar_novamente = False  # vira True quando os jogadores pedem revanche
 
 # ==================== SECAO 3: MENU PRINCIPAL (Marlon) ====================
 # Este while mantem o menu aberto ate o jogador escolher Sair
 while programa_ativo == True:
-    print()
-    print("===== JOGO DA VELHA =====")
-    print("1 - Jogar")
-    print("2 - Ver regras")
-    print("3 - Ver placar")
-    print("4 - Sair")
+    if jogar_novamente == True:
+        # Revanche: pula o menu e comeca outra partida direto (Francisco)
+        opcao = 1
+        opcao_valida = True
+        jogar_novamente = False
+    else:
+        print()
+        print("===== JOGO DA VELHA =====")
+        print("1 - Jogar")
+        print("2 - Ver regras")
+        print("3 - Ver placar")
+        print("4 - Sair")
 
-    # Repete a leitura ate a opcao ser valida
-    opcao_valida = False
+        # Repete a leitura ate a opcao ser valida
+        opcao_valida = False
     while opcao_valida == False:
         entrada = input("Escolha uma opcao (1 a 4): ")
         # Compara o texto digitado com cada opcao: "1", "2", "3" e "4"
@@ -189,7 +196,21 @@ while programa_ativo == True:
             empates = empates + 1
         print("Placar: X " + str(vitorias_x) + " x " + str(vitorias_o) + " O | Empates: " + str(empates))
 
-        # Serie e jogar novamente (Francisco)
+        # Serie de melhor de 3 ou 5 (Francisco) - desafio extra, ainda nao feito
+
+        # Jogar novamente (Francisco)
+        # Repete a pergunta ate a resposta ser s ou n
+        resposta_valida = False
+        while resposta_valida == False:
+            resposta = input("Jogar novamente? (s/n): ")
+            if resposta == "s" or resposta == "S":
+                jogar_novamente = True
+                resposta_valida = True
+            elif resposta == "n" or resposta == "N":
+                jogar_novamente = False
+                resposta_valida = True
+            else:
+                print("Resposta invalida! Digite s para sim ou n para nao.")
 
     elif opcao == 2:
         print()
