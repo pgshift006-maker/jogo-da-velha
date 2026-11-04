@@ -103,9 +103,30 @@ while programa_ativo == True:
             jogadas = jogadas + 1
 
             # Verificacao de vitoria e empate e troca de jogador (PG)
+            # So o simbolo que acabou de jogar pode ter completado uma sequencia
 
+            # Linhas: o for de fora escolhe a linha i, o de dentro conta as casas
+            for i in range(3):
+                marcadas = 0
+                for j in range(3):
+                    if tabuleiro[i][j] == simbolo:
+                        marcadas = marcadas + 1
+                if marcadas == 3:
+                    vencedor = simbolo
+
+            # Colunas: o for de fora escolhe a coluna j, o de dentro desce as linhas
+            for j in range(3):
+                marcadas = 0
+                for i in range(3):
+                    if tabuleiro[i][j] == simbolo:
+                        marcadas = marcadas + 1
+                if marcadas == 3:
+                    vencedor = simbolo
+
+            if vencedor != "":
+                partida_ativa = False
             # Com as 9 casas marcadas, nao ha mais jogada possivel
-            if jogadas == 9:
+            elif jogadas == 9:
                 partida_ativa = False
             else:
                 # Troca de jogador: depois de X joga O, depois de O joga X
