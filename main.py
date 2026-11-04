@@ -179,7 +179,17 @@ while programa_ativo == True:
         else:
             print("Deu velha! A partida terminou empatada.")
 
-        # Resultado, placar, serie e jogar novamente (Francisco)
+        # Placar acumulado (Francisco)
+        # Soma 1 para quem venceu ou para os empates
+        if vencedor == "X":
+            vitorias_x = vitorias_x + 1
+        elif vencedor == "O":
+            vitorias_o = vitorias_o + 1
+        else:
+            empates = empates + 1
+        print("Placar: X " + str(vitorias_x) + " x " + str(vitorias_o) + " O | Empates: " + str(empates))
+
+        # Serie e jogar novamente (Francisco)
 
     elif opcao == 2:
         print()
@@ -191,7 +201,11 @@ while programa_ativo == True:
 
     elif opcao == 3:
         # Exibicao do placar (Francisco)
-        print("Placar ainda nao disponivel.")
+        print()
+        print("===== PLACAR =====")
+        print("Jogador X: " + str(vitorias_x))
+        print("Jogador O: " + str(vitorias_o))
+        print("Empates: " + str(empates))
 
     else:
         # Estatisticas da sessao ao sair (Francisco)
