@@ -14,6 +14,10 @@ jogadas = 0            # quantas casas ja foram marcadas no tabuleiro
 programa_ativo = True  # controla o menu principal
 
 # ==================== SECAO 2: VARIAVEIS DO PLACAR (Francisco) ====================
+# O placar fica fora do menu para acumular os resultados de todas as partidas
+vitorias_x = 0   # partidas vencidas pelo jogador X
+vitorias_o = 0   # partidas vencidas pelo jogador O
+empates = 0      # partidas que terminaram sem vencedor
 
 # ==================== SECAO 3: MENU PRINCIPAL (Marlon) ====================
 # Este while mantem o menu aberto ate o jogador escolher Sair
@@ -39,8 +43,14 @@ while programa_ativo == True:
 
     if opcao == 1:
         # ==================== SECAO 4: PARTIDA ====================
+        # Limpeza do tabuleiro antes de cada partida (Francisco)
+        # O for de fora percorre as linhas e o de dentro apaga cada casa
+        for i in range(3):
+            for j in range(3):
+                tabuleiro[i][j] = " "
+        jogadas = 0
+
         # Controle da partida (PG)
-        # O Francisco zera "jogadas" e limpa a matriz entre uma partida e outra
         partida_ativa = True   # vira False quando alguem vence ou quando empata
         vencedor = ""          # guarda "X" ou "O"; continua "" se empatar
         simbolo = "X"          # toda partida comeca com o jogador X
