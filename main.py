@@ -39,9 +39,14 @@ while programa_ativo == True:
 
     if opcao == 1:
         # ==================== SECAO 4: PARTIDA ====================
-        # TEMPORARIO: o PG troca esta condicao pela verificacao de
-        # vitoria e empate, e o Francisco zera "jogadas" ao limpar o tabuleiro
-        while jogadas < 9:
+        # Controle da partida (PG)
+        # O Francisco zera "jogadas" e limpa a matriz entre uma partida e outra
+        partida_ativa = True   # vira False quando alguem vence ou quando empata
+        vencedor = ""          # guarda "X" ou "O"; continua "" se empatar
+        simbolo = "X"          # toda partida comeca com o jogador X
+
+        # Este while repete as jogadas ate a partida terminar
+        while partida_ativa == True:
             # Exibicao do tabuleiro (Marlon)
             print()
             print("     1   2   3")
@@ -99,11 +104,15 @@ while programa_ativo == True:
 
             # Verificacao de vitoria e empate e troca de jogador (PG)
 
-            # Troca de jogador: depois de X joga O, depois de O joga X
-            if simbolo == "X":
-                simbolo = "O"
+            # Com as 9 casas marcadas, nao ha mais jogada possivel
+            if jogadas == 9:
+                partida_ativa = False
             else:
-                simbolo = "X"
+                # Troca de jogador: depois de X joga O, depois de O joga X
+                if simbolo == "X":
+                    simbolo = "O"
+                else:
+                    simbolo = "X"
 
         # Exibe o tabuleiro final da partida
         print()
