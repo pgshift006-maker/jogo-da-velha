@@ -163,6 +163,12 @@ while programa_ativo == True:
         print()
         print("Fim da partida.")
 
+        # Resultado da partida (PG)
+        if vencedor != "":
+            print("O jogador " + vencedor + " venceu!")
+        else:
+            print("Deu velha! A partida terminou empatada.")
+
         # Resultado, placar, serie e jogar novamente (Francisco)
 
     elif opcao == 2:
