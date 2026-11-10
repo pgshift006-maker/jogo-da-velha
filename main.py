@@ -46,7 +46,11 @@ while programa_ativo == True:
                 opcao_valida = True
                 opcao = n
         if opcao_valida == False:
-            print("Opcao invalida! Digite um numero de 1 a 4.")
+            # Mostra o que foi digitado para o jogador perceber o erro
+            if entrada == "":
+                print("Opcao invalida! Voce nao digitou nada. Digite um numero de 1 a 4.")
+            else:
+                print("Opcao invalida! Voce digitou '" + entrada + "'. Digite um numero de 1 a 4.")
 
     if opcao == 1:
         # ==================== SECAO 4: PARTIDA ====================
@@ -66,10 +70,10 @@ while programa_ativo == True:
         while partida_ativa == True:
             # Exibicao do tabuleiro (Marlon)
             print()
-            print("     1   2   3")
+            print("         1   2   3   (colunas)")
             # O for de fora percorre as linhas da matriz
             for i in range(3):
-                texto_linha = "  " + str(i + 1) + " "
+                texto_linha = "Linha " + str(i + 1) + " "
                 # O for de dentro percorre as colunas da linha i
                 for j in range(3):
                     texto_linha = texto_linha + " " + tabuleiro[i][j] + " "
@@ -77,7 +81,7 @@ while programa_ativo == True:
                         texto_linha = texto_linha + "|"
                 print(texto_linha)
                 if i < 2:
-                    print("    ---+---+---")
+                    print("        ---+---+---")
             print()
 
             print("Vez do jogador " + simbolo)
@@ -96,7 +100,19 @@ while programa_ativo == True:
                             linha_valida = True
                             linha = n - 1  # indice da matriz (0 a 2)
                     if linha_valida == False:
-                        print("Entrada invalida! Digite um numero de 1 a 3.")
+                        if entrada == "":
+                            print("Entrada invalida! Voce nao digitou nada. Digite um numero de 1 a 3.")
+                        else:
+                            print("Entrada invalida! Voce digitou '" + entrada + "'. Digite um numero de 1 a 3.")
+                    else:
+                        # Confere se a linha escolhida ainda tem alguma casa vazia
+                        casas_vazias = 0
+                        for j in range(3):
+                            if tabuleiro[linha][j] == " ":
+                                casas_vazias = casas_vazias + 1
+                        if casas_vazias == 0:
+                            print("A linha " + str(linha + 1) + " esta cheia! Escolha outra linha.")
+                            linha_valida = False
 
                 # Repete a leitura ate a coluna ser valida
                 coluna_valida = False
@@ -108,13 +124,17 @@ while programa_ativo == True:
                             coluna_valida = True
                             coluna = n - 1  # indice da matriz (0 a 2)
                     if coluna_valida == False:
-                        print("Entrada invalida! Digite um numero de 1 a 3.")
+                        if entrada == "":
+                            print("Entrada invalida! Voce nao digitou nada. Digite um numero de 1 a 3.")
+                        else:
+                            print("Entrada invalida! Voce digitou '" + entrada + "'. Digite um numero de 1 a 3.")
 
                 # So aceita a jogada se a casa escolhida estiver vazia
                 if tabuleiro[linha][coluna] == " ":
                     casa_livre = True
                 else:
-                    print("Casa ocupada! Escolha outra jogada.")
+                    # Informa qual casa foi escolhida e quem ja marcou nela
+                    print("Casa ocupada! A linha " + str(linha + 1) + ", coluna " + str(coluna + 1) + " ja esta marcada com " + tabuleiro[linha][coluna] + ". Escolha outra jogada.")
 
             tabuleiro[linha][coluna] = simbolo
             jogadas = jogadas + 1
@@ -166,17 +186,17 @@ while programa_ativo == True:
 
         # Exibe o tabuleiro final da partida
         print()
-        print("     1   2   3")
+        print("         1   2   3   (colunas)")
         # Mesmos lacos da exibicao: linhas por fora, colunas por dentro
         for i in range(3):
-            texto_linha = "  " + str(i + 1) + " "
+            texto_linha = "Linha " + str(i + 1) + " "
             for j in range(3):
                 texto_linha = texto_linha + " " + tabuleiro[i][j] + " "
                 if j < 2:
                     texto_linha = texto_linha + "|"
             print(texto_linha)
             if i < 2:
-                print("    ---+---+---")
+                print("        ---+---+---")
         print()
         print("Fim da partida.")
 
