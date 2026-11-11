@@ -16,9 +16,9 @@ No menu, escolha uma das opções:
 1. Jogar
 2. Ver regras
 3. Ver placar
-4. Sair
+4. Sair (antes de encerrar, mostra as estatísticas da sessão)
 
-Na partida, informe a linha e a coluna da casa desejada, com números de 1 a 3.
+Na partida, informe a linha e a coluna da casa desejada, com números de 1 a 3. Ao fim de cada partida, o programa mostra o resultado e o placar e pergunta se os jogadores querem jogar novamente (`s` ou `n`).
 
 ## Integrantes
 
