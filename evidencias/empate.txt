@@ -1,0 +1,132 @@
+
+===== JOGO DA VELHA =====
+1 - Jogar
+2 - Ver regras
+3 - Ver placar
+4 - Sair
+Escolha uma opcao (1 a 4): 1
+
+         1   2   3   (colunas)
+Linha 1    |   |   
+        ---+---+---
+Linha 2    |   |   
+        ---+---+---
+Linha 3    |   |   
+
+Vez do jogador X
+Escolha a linha (1 a 3): 1
+Escolha a coluna (1 a 3): 1
+
+         1   2   3   (colunas)
+Linha 1  X |   |   
+        ---+---+---
+Linha 2    |   |   
+        ---+---+---
+Linha 3    |   |   
+
+Vez do jogador O
+Escolha a linha (1 a 3): 1
+Escolha a coluna (1 a 3): 2
+
+         1   2   3   (colunas)
+Linha 1  X | O |   
+        ---+---+---
+Linha 2    |   |   
+        ---+---+---
+Linha 3    |   |   
+
+Vez do jogador X
+Escolha a linha (1 a 3): 1
+Escolha a coluna (1 a 3): 3
+
+         1   2   3   (colunas)
+Linha 1  X | O | X 
+        ---+---+---
+Linha 2    |   |   
+        ---+---+---
+Linha 3    |   |   
+
+Vez do jogador O
+Escolha a linha (1 a 3): 2
+Escolha a coluna (1 a 3): 2
+
+         1   2   3   (colunas)
+Linha 1  X | O | X 
+        ---+---+---
+Linha 2    | O |   
+        ---+---+---
+Linha 3    |   |   
+
+Vez do jogador X
+Escolha a linha (1 a 3): 2
+Escolha a coluna (1 a 3): 1
+
+         1   2   3   (colunas)
+Linha 1  X | O | X 
+        ---+---+---
+Linha 2  X | O |   
+        ---+---+---
+Linha 3    |   |   
+
+Vez do jogador O
+Escolha a linha (1 a 3): 2
+Escolha a coluna (1 a 3): 3
+
+         1   2   3   (colunas)
+Linha 1  X | O | X 
+        ---+---+---
+Linha 2  X | O | O 
+        ---+---+---
+Linha 3    |   |   
+
+Vez do jogador X
+Escolha a linha (1 a 3): 3
+Escolha a coluna (1 a 3): 2
+
+         1   2   3   (colunas)
+Linha 1  X | O | X 
+        ---+---+---
+Linha 2  X | O | O 
+        ---+---+---
+Linha 3    | X |   
+
+Vez do jogador O
+Escolha a linha (1 a 3): 3
+Escolha a coluna (1 a 3): 1
+
+         1   2   3   (colunas)
+Linha 1  X | O | X 
+        ---+---+---
+Linha 2  X | O | O 
+        ---+---+---
+Linha 3  O | X |   
+
+Vez do jogador X
+Escolha a linha (1 a 3): 3
+Escolha a coluna (1 a 3): 3
+
+         1   2   3   (colunas)
+Linha 1  X | O | X 
+        ---+---+---
+Linha 2  X | O | O 
+        ---+---+---
+Linha 3  O | X | X 
+
+Fim da partida.
+Deu velha! A partida terminou empatada.
+Placar: X 0 x 0 O | Empates: 1
+Jogar novamente? (s/n): n
+
+===== JOGO DA VELHA =====
+1 - Jogar
+2 - Ver regras
+3 - Ver placar
+4 - Sair
+Escolha uma opcao (1 a 4): 4
+
+===== ESTATISTICAS DA SESSAO =====
+Partidas disputadas: 1
+Vitorias de X: 0
+Vitorias de O: 0
+Empates: 1
+Ate a proxima!

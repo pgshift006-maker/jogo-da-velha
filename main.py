@@ -250,5 +250,16 @@ while programa_ativo == True:
 
     else:
         # Estatisticas da sessao ao sair (Francisco)
+        # O total e a soma dos tres contadores do placar
+        total_partidas = vitorias_x + vitorias_o + empates
+        print()
+        print("===== ESTATISTICAS DA SESSAO =====")
+        if total_partidas == 0:
+            print("Nenhuma partida foi disputada nesta sessao.")
+        else:
+            print("Partidas disputadas: " + str(total_partidas))
+            print("Vitorias de X: " + str(vitorias_x))
+            print("Vitorias de O: " + str(vitorias_o))
+            print("Empates: " + str(empates))
         print("Ate a proxima!")
         programa_ativo = False
