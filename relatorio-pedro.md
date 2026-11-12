@@ -99,7 +99,3 @@ X completa a linha 2 com a jogada na linha 2, coluna 3. O programa mostra o tabu
 O tabuleiro termina cheio, sem linha, coluna ou diagonal completa. O programa declara empate e soma um em "Empates".
 
 ![Terminal mostrando o empate com o tabuleiro cheio](evidencias/print-empate.png)
-
-## Pendências antes da entrega
-
-- Conferir este conteúdo com o item 3 do enunciado oficial (o enunciado não está na pasta do projeto). **Apagar esta seção depois da conferência.**
