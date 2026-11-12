@@ -97,7 +97,13 @@ while programa_ativo == True:
             tabuleiro[linha][coluna] = simbolo
             jogadas = jogadas + 1
 
-            # Verificacao de vitoria e empate e troca de jogador (PG)
+            # Verificacao de vitoria e empate (PG)
+
+            # Troca de jogador: se jogou X, a proxima vez e do O, e vice-versa
+            if simbolo == "X":
+                simbolo = "O"
+            else:
+                simbolo = "X"
 
         # Exibe o tabuleiro final da partida
         print()
